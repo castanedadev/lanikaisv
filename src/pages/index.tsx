@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link, type HeadFC, type PageProps } from "gatsby"
 import Layout from "../components/layout"
+import { StaticImage } from "gatsby-plugin-image"
 
 const pageStyles = {
   color: "#232129",
@@ -80,7 +81,11 @@ const badgeStyle = {
 
 const IndexPage: React.FC<PageProps> = () => (
   <Layout pageTitle="Landing Page">
-    <p>This is my website layout</p>
+    <StaticImage
+        alt="Chuntaro. An orange cat with a white belly and paws. He is sitting on a table posing for the camera."
+        src="../images/chunti.jpeg"
+      />
+    <StaticImage alt="Mimosa. A white cat. She is laying on a desk sleeping." src="../images/mimi.jpeg" />
   </Layout>
 )
 
