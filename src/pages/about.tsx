@@ -1,6 +1,6 @@
 import { HeadFC, Link, PageProps } from "gatsby";
 import React from "react";
-import Layout from "./layout";
+import Layout from "../components/layout";
 
 const AboutPage: React.FC<PageProps> = () => {
     return (
