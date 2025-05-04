@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link, type HeadFC, type PageProps } from "gatsby"
 import Layout from "../components/layout"
 import { StaticImage } from "gatsby-plugin-image"
+import SEO from "../components/seo"
 
 const pageStyles = {
   color: "#232129",
@@ -80,7 +81,7 @@ const badgeStyle = {
 }
 
 const IndexPage: React.FC<PageProps> = () => (
-  <Layout pageTitle="Landing Page">
+  <Layout pageTitle="Home Page">
     <StaticImage
         alt="Chuntaro. An orange cat with a white belly and paws. He is sitting on a table posing for the camera."
         src="../images/chunti.jpeg"
@@ -89,6 +90,6 @@ const IndexPage: React.FC<PageProps> = () => (
   </Layout>
 )
 
+export const Head = () => <SEO title="Home Page (from SEO component)" />
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Home Page</title>
