@@ -1,3 +1,4 @@
+// biome-ignore lint/style/useImportType: <explanation>
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { HeadFC, PageProps } from "gatsby";

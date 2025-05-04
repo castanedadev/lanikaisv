@@ -1,4 +1,5 @@
-import { HeadFC, Link, PageProps } from "gatsby";
+import type { PageProps } from "gatsby";
+// biome-ignore lint/style/useImportType: <explanation>
 import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";

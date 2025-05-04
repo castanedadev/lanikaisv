@@ -1,3 +1,4 @@
+// biome-ignore lint/style/useImportType: <explanation>
 import * as React from "react"
 import { Link, type HeadFC, type PageProps } from "gatsby"
 import Layout from "../components/layout"
@@ -51,7 +52,7 @@ const linkStyle = {
 const docLinkStyle = {
   ...linkStyle,
   listStyleType: "none",
-  display: `inline-block`,
+  display: "inline-block",
   marginBottom: 24,
   marginRight: 12,
 }
@@ -74,7 +75,7 @@ const badgeStyle = {
   borderRadius: 4,
   padding: "4px 6px",
   display: "inline-block",
-  position: "relative" as "relative",
+  position: "relative" as const,
   top: -2,
   marginLeft: 10,
   lineHeight: 1,
