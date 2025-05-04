@@ -1,14 +1,22 @@
+import { graphql } from "gatsby";
 // biome-ignore lint/style/useImportType: <explanation>
 import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import { graphql } from "gatsby";
 
 interface BlogPageProps {
 	data: {
-		allFile: {
+		allMdx: {
 			nodes: {
-				name: string;
+				excerpt: string;
+				parent: {
+					modifiedTime: string;
+				};
+				frontmatter: {
+					date: string;
+					title: string;
+				};
+				id: string;
 			}[];
 		};
 	};
@@ -17,22 +25,34 @@ interface BlogPageProps {
 const BlogPage: React.FC<BlogPageProps> = ({ data }) => {
 	return (
 		<Layout pageTitle="My Blog Posts">
-			<p>My cool posts...</p>
-			<ul>
-				{data.allFile.nodes.map((node) => (
-					<li key={node.name}>{node.name}</li>
-				))}
-			</ul>
+			{data.allMdx.nodes.map((node) => (
+				<article key={node.id}>
+					<h2>{node.frontmatter.title}</h2>
+					<p>Posted: {node.frontmatter.date}</p>
+					<p>Last Modified: {node.parent?.modifiedTime}</p>
+					<p>{node.excerpt}</p>
+				</article>
+			))}
 		</Layout>
 	);
 };
 
 export const query = graphql`{
-    allFile {
-      nodes {
-        name
+		allMdx (sort: { frontmatter: { date: DESC } }) {
+    nodes {
+      frontmatter {
+        date(formatString: "MMMM D, YYYY")
+        title
       }
-    }
+      id
+      excerpt
+      parent {
+        ... on File {
+          modifiedTime(formatString: "MMMM D, YYYY")
+        }
+      }
+}
+  }
   }
   `;
 
