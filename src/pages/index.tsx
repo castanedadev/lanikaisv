@@ -1,9 +1,9 @@
+import { type HeadFC, Link, type PageProps } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 // biome-ignore lint/style/useImportType: <explanation>
 import * as React from "react";
-import { Link, type HeadFC, type PageProps } from "gatsby";
 import Layout from "../components/layout";
-import { StaticImage } from "gatsby-plugin-image";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 const pageStyles = {
 	color: "#232129",
@@ -94,5 +94,5 @@ const IndexPage: React.FC<PageProps> = () => (
 	</Layout>
 );
 
-export const Head = () => <SEO title="Home Page (from SEO component)" />;
+export const Head = () => <Seo title="Home Page (from SEO component)" />;
 export default IndexPage;
