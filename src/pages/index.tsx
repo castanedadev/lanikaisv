@@ -94,5 +94,5 @@ const IndexPage: React.FC<PageProps> = () => (
 	</Layout>
 );
 
-export const Head = () => <Seo title="Home Page (from SEO component)" />;
+export const Head = () => <Seo title="Home" />;
 export default IndexPage;

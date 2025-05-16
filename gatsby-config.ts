@@ -4,7 +4,8 @@ const config: GatsbyConfig = {
 	siteMetadata: {
 		description:
 			"Lanikai SV is a jewelry brand that specializes in selling high-quality, handcrafted jewelry. Our mission is to provide our customers with unique and beautiful pieces that they can cherish for a lifetime.",
-		siteUrl: "https://www.lanikaisv.com",
+		image: "/images/lanikai.png",
+		siteUrl: "https://lanikaisv.netlify.app/",
 		title: "Lanikai SV",
 		twitterUsername: "@lanikaisv",
 	},
