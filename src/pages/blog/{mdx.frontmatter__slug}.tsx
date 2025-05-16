@@ -11,7 +11,7 @@ interface BlogPostProps {
 		mdx: {
 			frontmatter: {
 				heroImageAlt: string;
-				heroImage: ImageDataLike | null;
+				heroImage: ImageDataLike;
 				title: string;
 				date: string;
 			};
