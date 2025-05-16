@@ -37,9 +37,15 @@ const Seo: React.FC<SEOProps> = ({
 			<meta name="description" content={seo.description} />
 			<meta name="image" content={seo.image} />
 			<meta name="twitter:card" content="summary_large_image" />
-			<meta name="twitter:title" content={seo.title} />
-			<meta name="twitter:url" content={seo.url} />
-			<meta name="twitter:description" content={seo.description} />
+			<meta name="twitter:title" content={seo.title || "LanikaiSV"} />
+			<meta
+				name="twitter:url"
+				content={seo.url || "https://lanikaisv.netlify.app/"}
+			/>
+			<meta
+				name="twitter:description"
+				content={seo.description || "LanikaiSV"}
+			/>
 			<meta name="twitter:image" content={seo.image} />
 			<meta name="twitter:creator" content={seo.twitterUsername} />
 			<link
