@@ -1,4 +1,5 @@
 import { graphql } from "gatsby";
+import { GatsbyImage, type ImageDataLike, getImage } from "gatsby-plugin-image";
 // biome-ignore lint/style/useImportType: <explanation>
 import * as React from "react";
 import Layout from "../../components/layout";
@@ -9,6 +10,8 @@ interface BlogPostProps {
 	data: {
 		mdx: {
 			frontmatter: {
+				heroImageAlt: string;
+				heroImage: ImageDataLike | null;
 				title: string;
 				date: string;
 			};
@@ -18,9 +21,13 @@ interface BlogPostProps {
 
 const BlogPost: React.FC<BlogPostProps> = (props) => {
 	const { children, data } = props;
+	const image = getImage(data.mdx.frontmatter.heroImage);
 	return (
 		<Layout pageTitle={data.mdx.frontmatter.title}>
 			<p>{data.mdx.frontmatter.date}</p>
+			{image && (
+				<GatsbyImage image={image} alt={data.mdx.frontmatter.heroImageAlt} />
+			)}
 			{children}
 		</Layout>
 	);
@@ -28,13 +35,19 @@ const BlogPost: React.FC<BlogPostProps> = (props) => {
 
 export const query = graphql`
   query ($id: String) {
-    mdx(id: { eq: $id }) {
-      frontmatter {
-        title
-        date(formatString: "MMMM D, YYYY")
+  mdx(id: {eq: $id}) {
+    frontmatter {
+      title
+      date(formatString: "MMMM D, YYYY")
+      heroImageAlt
+      heroImage {
+        childImageSharp {
+          gatsbyImageData
+        }
       }
     }
   }
+}
 `;
 
 export const Head = ({
