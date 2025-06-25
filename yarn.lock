@@ -8114,6 +8114,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-dark-mode@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "gatsby-plugin-dark-mode@npm:1.1.2"
+  dependencies:
+    prop-types: "npm:^15.5.7"
+  peerDependencies:
+    react: 16.x
+  checksum: 10c0/ffb3c336cf1ffdd42ec9219b209e4ec3fb82f2cea6c5628d86c29ebbbb55974086528996342061ddd290a2d2cac9fbfddfdab5280185dfcd0c83913bcfd19db2
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-image@npm:^3.14.0":
   version: 3.14.0
   resolution: "gatsby-plugin-image@npm:3.14.0"
@@ -10544,6 +10555,7 @@ __metadata:
     "@types/react-dom": "npm:^18.2.19"
     gatsby: "npm:^5.14.1"
     gatsby-adapter-netlify: "npm:^1.2.0"
+    gatsby-plugin-dark-mode: "npm:^1.1.2"
     gatsby-plugin-image: "npm:^3.14.0"
     gatsby-plugin-manifest: "npm:^5.14.0"
     gatsby-plugin-mdx: "npm:^5.14.1"
@@ -13889,7 +13901,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.8.1":
+"prop-types@npm:^15.5.7, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:

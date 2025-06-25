@@ -2,6 +2,12 @@ import { Link, graphql } from "gatsby";
 // biome-ignore lint/style/useImportType: <explanation>
 import * as React from "react";
 import Layout from "../../components/layout";
+import {
+	blogPost,
+	blogPostDate,
+	blogPostExcerpt,
+	blogPostTitle,
+} from "../../components/layout.module.css";
 import Seo from "../../components/seo";
 
 interface BlogPageProps {
@@ -25,26 +31,26 @@ interface BlogPageProps {
 
 const BlogPage: React.FC<BlogPageProps> = ({ data }) => {
 	return (
-		<Layout pageTitle="My Blog Posts">
+		<Layout pageTitle="">
 			{data.allMdx.nodes.map((node) => (
-				<article key={node.id}>
-					<h2>
+				<div className={blogPost} key={node.id}>
+					<h2 className={blogPostTitle}>
 						<Link to={`/blog/${node.frontmatter.slug}`}>
 							{node.frontmatter.title}
 						</Link>
 					</h2>
-
-					<p>Posted: {node.frontmatter.date}</p>
-					<p>Last Modified: {node.parent?.modifiedTime}</p>
-					<p>{node.excerpt}</p>
-				</article>
+					<div className={blogPostDate}>{node.frontmatter.date}</div>
+					{node.excerpt && (
+						<div className={blogPostExcerpt}>{node.excerpt}</div>
+					)}
+				</div>
 			))}
 		</Layout>
 	);
 };
 
 export const query = graphql`{
-		allMdx (sort: { frontmatter: { date: DESC } }) {
+	allMdx (sort: { frontmatter: { date: DESC } }) {
     nodes {
       frontmatter {
         title
