@@ -28,7 +28,7 @@ const codeStyles = {
 /**
  * 404 Not Found page component.
  */
-const NotFoundPage = (props: PageProps): JSX.Element => {
+const NotFoundPage = (): JSX.Element => {
 	return (
 		<main style={pageStyles}>
 			<h1 style={headingStyles}>Page not found</h1>
