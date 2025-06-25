@@ -204,7 +204,7 @@
 	font-size: 2.5rem;
 	font-weight: 800;
 	text-transform: lowercase;
-	background: linear-gradient(90deg, #ffd6e0 0%, #ff9aa2 60%, #a1c4fd 100%);
+	background: linear-gradient(90deg, #ffe3e3 0%, #ffc6c7 60%, #ffe9b1 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
@@ -259,7 +259,7 @@
 	font-size: 2.2rem;
 	font-weight: 800;
 	margin: 0 0 0.5rem 0;
-	background: linear-gradient(90deg, #ffd6e0 0%, #ff9aa2 60%, #a1c4fd 100%);
+	background: linear-gradient(90deg, #ffe3e3 0%, #ffc6c7 60%, #ffe9b1 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
