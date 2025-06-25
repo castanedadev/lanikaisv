@@ -2,19 +2,17 @@
 import React from "react";
 import { useSiteMetadata } from "../hooks/use-site-metadata";
 
-type SEOProps = {
+/**
+ * SEO component for setting meta tags and social sharing info.
+ */
+export interface SeoProps {
 	title?: string;
 	description?: string;
 	pathname?: string;
 	children?: React.ReactNode;
-};
+}
 
-const Seo: React.FC<SEOProps> = ({
-	title,
-	description,
-	pathname,
-	children,
-}) => {
+const Seo = ({ title, description, pathname, children }: SeoProps) => {
 	const {
 		title: defaultTitle,
 		description: defaultDescription,

@@ -1,20 +1,24 @@
+import { Link, graphql, useStaticQuery } from "gatsby";
 // biome-ignore lint/style/useImportType: <explanation>
 import React from "react";
-import { graphql, Link, useStaticQuery } from "gatsby";
-import { HeadFC, PageProps } from "gatsby";
 import {
 	container,
-	navLinkText,
-	navLinkItem,
 	heading,
+	navLinkItem,
+	navLinkText,
 	navLinks,
 	siteTitle,
 } from "./layout.module.css";
 
-const Layout: React.FC<{ pageTitle?: string; children?: React.ReactNode }> = ({
-	pageTitle,
-	children,
-}) => {
+/**
+ * Layout component for page structure and navigation.
+ */
+interface LayoutProps {
+	pageTitle?: string;
+	children?: React.ReactNode;
+}
+
+const Layout = ({ pageTitle = "", children }: LayoutProps) => {
 	const data = useStaticQuery(graphql`
     query {
       site {
@@ -59,4 +63,5 @@ const Layout: React.FC<{ pageTitle?: string; children?: React.ReactNode }> = ({
 		</div>
 	);
 };
+
 export default Layout;

@@ -81,7 +81,10 @@ const badgeStyle = {
 	lineHeight: 1,
 };
 
-const IndexPage: React.FC<PageProps> = () => (
+/**
+ * Home page component.
+ */
+const IndexPage = (props: PageProps): JSX.Element => (
 	<Layout pageTitle="Home Page">
 		<StaticImage
 			alt="Chuntaro. An orange cat with a white belly and paws. He is sitting on a table posing for the camera."
@@ -94,5 +97,5 @@ const IndexPage: React.FC<PageProps> = () => (
 	</Layout>
 );
 
-export const Head = () => <Seo title="Home" />;
+export const Head: HeadFC = () => <Seo title="Home" />;
 export default IndexPage;
