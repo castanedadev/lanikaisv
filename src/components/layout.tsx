@@ -18,8 +18,6 @@ import {
 	siteSubtitle,
 	siteTitle,
 } from "./layout.module.css";
-// import ThemeProvider from "./theme-provider";
-// import ThemeToggle from "./theme-toggle";
 import "../styles/global.css";
 import avatarImg from "../images/author.jpeg";
 
