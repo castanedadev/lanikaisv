@@ -20,20 +20,8 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
 					root.setAttribute("data-theme", theme || "light");
 				}, [theme]);
 
-				// CSS custom properties for theming
-				const themeStyles = {
-					"--bg-primary": theme === "dark" ? "#1a1a1a" : "#ffffff",
-					"--bg-secondary": theme === "dark" ? "#2d2d2d" : "#f5f5f5",
-					"--text-primary": theme === "dark" ? "#ffffff" : "#333333",
-					"--text-secondary": theme === "dark" ? "#cccccc" : "#666666",
-					"--accent-color": theme === "dark" ? "#8b5cf6" : "#663399",
-					"--border-color": theme === "dark" ? "#404040" : "#e0e0e0",
-					"--link-color": theme === "dark" ? "#a78bfa" : "#663399",
-					"--link-hover": theme === "dark" ? "#c4b5fd" : "#8b5cf6",
-				} as React.CSSProperties;
-
 				return (
-					<div style={themeStyles} data-theme={theme || "light"}>
+					<div data-theme={theme || "light"}>
 						{children}
 					</div>
 				);
