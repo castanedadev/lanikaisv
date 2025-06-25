@@ -3,12 +3,25 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import {
 	container,
-	heading,
+	footer,
+	headerAvatar,
+	headerBar,
+	headerByline,
+	headerContent,
+	headerTitle,
+	main,
+	nav,
 	navLinkItem,
 	navLinkText,
 	navLinks,
+	pageTitle,
+	siteSubtitle,
 	siteTitle,
 } from "./layout.module.css";
+import ThemeProvider from "./theme-provider";
+import ThemeToggle from "./theme-toggle";
+import "../styles/global.css";
+import avatarImg from "../images/chunti.jpeg";
 
 /**
  * Layout component for page structure and navigation.
@@ -30,11 +43,17 @@ const Layout = ({ pageTitle = "", children }: LayoutProps) => {
   `);
 
 	return (
-		<div className={container}>
-			<header>
-				<h1 className={siteTitle}>{data.site.siteMetadata.title}</h1>
+		<ThemeProvider>
+			<div className={container}>
+				<div className={headerBar}>
+					<h1 className={headerTitle}>lanikaisv</h1>
+					<div className={headerByline}>
+						<span>by</span>
+						<img src={avatarImg} alt="Author avatar" className={headerAvatar} />
+					</div>
+				</div>
 
-				<nav>
+				<nav className={nav}>
 					<ul className={navLinks}>
 						<li className={navLinkItem}>
 							<Link to="/" className={navLinkText}>
@@ -51,16 +70,24 @@ const Layout = ({ pageTitle = "", children }: LayoutProps) => {
 								Blog
 							</Link>
 						</li>
+						<li className={navLinkItem}>
+							<ThemeToggle />
+						</li>
 					</ul>
 				</nav>
 
-				<h3 className={heading}>{pageTitle}</h3>
-			</header>
-			<main>{children}</main>
-			<footer>
-				<p>&copy; {new Date().getFullYear()} LanikaiSV</p>
-			</footer>
-		</div>
+				<main className={main}>
+					{pageTitle && <h2 className={pageTitle}>{pageTitle}</h2>}
+					{children}
+				</main>
+
+				<footer className={footer}>
+					<p>
+						&copy; {new Date().getFullYear()} LanikaiSV. Built with Gatsby and ❤️
+					</p>
+				</footer>
+			</div>
+		</ThemeProvider>
 	);
 };
 
