@@ -7,7 +7,7 @@ import Seo from "../components/seo";
 /**
  * About page component.
  */
-const AboutPage = (props: PageProps): JSX.Element => {
+const AboutPage = (): JSX.Element => {
 	return (
 		<Layout pageTitle="About Page">
 			<p>We are a team of passionate individuals.</p>
