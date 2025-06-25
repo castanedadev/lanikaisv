@@ -84,7 +84,7 @@ const badgeStyle = {
 /**
  * Home page component.
  */
-const IndexPage = (props: PageProps): JSX.Element => (
+const IndexPage = (): JSX.Element => (
 	<Layout pageTitle="Home Page">
 		<StaticImage
 			alt="Chuntaro. An orange cat with a white belly and paws. He is sitting on a table posing for the camera."
