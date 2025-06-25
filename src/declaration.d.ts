@@ -4,7 +4,7 @@ declare module "gatsby-plugin-dark-mode" {
 	interface ThemeTogglerProps {
 		children: (props: {
 			theme: string | null;
-			toggleTheme: () => void;
+			toggleTheme: (theme: string) => void;
 		}) => React.ReactNode;
 	}
 
