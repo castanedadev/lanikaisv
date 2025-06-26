@@ -9,21 +9,18 @@ Gatsby e-commerce site to practice coding skills.
 - **TypeScript**: Full type safety throughout the application
 - **Blog System**: MDX-based blog with image support
 - **SEO Optimized**: Built-in SEO components and meta tags
-- **Accessible**: WCAG 2.1 AA compliant with proper contrast ratios
 
 ## Design Highlights
 
 ### Color Gradients
-- **Header Gradient**: Soft pastel gradient header with overlay effects
+- **Header Gradient**: Soft pastel gradient header
 - **Background**: Consistent, accessible background color
 - **Accent Gradients**: Gradient text effects for headings and important elements
 - **Smooth Transitions**: Elegant transitions between UI states
 
 ### Typography & Layout
 - **Modern Typography**: Clean, readable fonts with proper hierarchy
-- **Card-Based Layout**: Content organized in beautiful cards with hover effects
 - **Responsive Grid**: Flexible grid system that adapts to different screen sizes
-- **Glass Morphism**: Subtle backdrop blur effects on interactive elements
 
 ## Tech Stack
 
@@ -56,22 +53,17 @@ Gatsby e-commerce site to practice coding skills.
    yarn typecheck
    ```
 
+## Dark Mode
+
+The implementation uses:
+
+- `gatsby-plugin-dark-mode` for theme management
+- CSS Custom Properties
+- Smooth transitions
+
 ## Color Accessibility
 
 All color combinations meet WCAG 2.1 AA contrast requirements:
 - **Light Mode**: 4.5:1 contrast ratio minimum
 - **Gradient Backgrounds**: Tested at all color-stop points for accessibility
-
-## Design System
-
-### Color Palette
-- **Primary**: Pastel gradients (see CSS)
-- **Secondary**: Soft backgrounds
-- **Text**: High contrast colors for readability
-
-### Components
-- **Header**: Gradient background with glass morphism effects
-- **Cards**: Elevated content containers with hover animations
-- **Buttons**: Gradient backgrounds with smooth transitions
-- **Navigation**: Clean, accessible navigation with active states
 
