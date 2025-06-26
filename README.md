@@ -1,6 +1,6 @@
 # Lanikai SV
 
-Gatsby e-commerce site to practice coding skills.
+Gatsby blog site to practice coding skills.
 
 ## Features
 
