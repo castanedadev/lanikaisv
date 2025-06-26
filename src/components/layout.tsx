@@ -44,14 +44,7 @@ const Layout = ({ pageTitle = "", children }: LayoutProps) => {
 		<div className={container}>
 			<div className={headerBar}>
 				<h1 className={headerTitle}>lanikaisv</h1>
-				<div className={headerByline}>
-					<span>by</span>
-					<img src={avatarImg} alt="Author avatar" className={headerAvatar} />
-				</div>
-			</div>
-
-			<nav className={nav}>
-				<ul className={navLinks}>
+				<ul className={navLinks} style={{ margin: 0 }}>
 					<li className={navLinkItem}>
 						<Link to="/" className={navLinkText}>
 							Home
@@ -68,7 +61,11 @@ const Layout = ({ pageTitle = "", children }: LayoutProps) => {
 						</Link>
 					</li>
 				</ul>
-			</nav>
+				<div className={headerByline}>
+					<span>by</span>
+					<img src={avatarImg} alt="Author avatar" className={headerAvatar} />
+				</div>
+			</div>
 
 			<main className={main}>
 				{pageTitle && <h2 className={pageTitle}>{pageTitle}</h2>}
