@@ -44,7 +44,7 @@ const Layout = ({ pageTitle = "", children }: LayoutProps) => {
 		<div className={container}>
 			<div className={headerBar}>
 				<h1 className={headerTitle}>lanikaisv</h1>
-				<ul className={navLinks} style={{ margin: 0 }}>
+				<ul className={navLinks}>
 					<li className={navLinkItem}>
 						<Link to="/" className={navLinkText}>
 							Home
